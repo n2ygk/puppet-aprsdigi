@@ -85,7 +85,6 @@ class aprsdigi (
   $intf         = $aprsdigi::params::intf,
   $aliases	= $aprsdigi::params::aliases,
   $traces	= $aprsdigi::params::traces,
-  $dst          = $aprsdigi::params::dst,
   $lat		= $aprsdigi::params::lat,
   $lon		= $aprsdigi::params::lon,
   $phg		= $aprsdigi::params::phg,
@@ -108,7 +107,6 @@ class aprsdigi (
   validate_string($lon)
   validate_string($phg)
   validate_string($txt)
-  validate_string($dst)
   validate_absolute_path($logfile)
   validate_bool($kill_dupes)
   validate_bool($kill_loops)
