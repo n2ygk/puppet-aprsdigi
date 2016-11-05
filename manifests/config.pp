@@ -1,7 +1,9 @@
 # https://docs.puppet.com/puppet/3.8/reference/experiments_future.html#enabling-the-future-parser
 class aprsdigi::config inherits aprsdigi {
-  file { '/etc/ax25':
-    ensure  => directory,
+  if !File['/etc/ax25'] {
+    file { '/etc/ax25':
+      ensure  => directory,
+    }
   }
   # build up the aprsdigi options to look something like this:
   # --kill_dupes --kill_loops --logfile /var/log/aprsdigi.log --trace WIDE --trace TRACE --subst_mycall --x1j4_xlate --interface ax25:sm0:RELAY,WIDE,TRACE
